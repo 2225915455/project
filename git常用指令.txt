@@ -1,0 +1,40 @@
+git config --global user.name "username" - 设置/修改用户名
+git config --global user.email "email" - 设置/修改邮箱
+git config user.name - 查看用户名
+git config user.email - 查看邮箱
+git config --list - 查看配置信息
+git init - 将改路径的目录变为git可以管理的仓库
+git add <file> - 把文件从工作区添加到暂缓区
+git add . -> 一次性将工作区的文件全部提交到暂缓区
+git commit -m <message> - 把暂缓区的文件提交当前分支(master)
+git log - 查看提交历史
+git log -num(指定查看几行) --pretty=oneline
+
+工作区(add前)、暂缓区(add后, commit前)、当前分支(commit后)
+版本回退
+git checkout -- file - 工作区的修改全部撤销(ad d前)
+git reset HEAD file - 暂存区的修改撤销掉, 重新放回工作区(add后, commit前)
+git reset --hard HEAD^ - 回退一个版本(HEAD^  - 一个^返回一个, 一次返回多次HEAD~)
+git reset --hard 1094a(commit的版本号前几位) - 后悔了想返回返回前的版本
+git reflog - 查看命令历史(回到旧版本时查看记录)
+git status - 查看暂缓区、工作区、是否提交的状态
+git status -s -> 精简输出
+git diff HEAD -- file - 查看工作区和版本库里面最新的把版本的区别
+git rm file - 删除一个文件
+
+github
+https
+将本地的文件远程传输到github
+git remote add origin https://github.com/2225915455/programd.git(本地仓库和远程的已经关联)
+git branch -M main
+git push -u origin main -> 因为用的是https传输协议所以会弹出框要求输入用户名和密码
+
+git关联github远程库 - git remote add origin git@github.com:GitHub账户名(2225915455)/learngit.git - 本地关联2225915455远程账户下的learngit文件
+https://api.github.com/users/2225915455 - 查看详细信息
+ssh-keygen -t rsa -C "2225915455@qq.com" - 生成秘钥
+
+先是在官网右上角的头像点下拉菜单，最下面的setting，
+进去左边最下面的<>D生成一个令牌，记得把复选框打上repo，
+生成之后复制，回到git再push，弹出用户框输入用户名，
+密码框输入这个令牌即可
+
